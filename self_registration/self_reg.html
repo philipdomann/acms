@@ -9,30 +9,9 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="js/strophe/strophe.js"></script>
         <script type="text/javascript" src="js/strophe/strophe.register.js"></script>
+        <script type="text/javascript" src="js/register.js"></script>
     </head>
     <body>
-        <button onclick="self_reg();">A button element</button>
+        <button onclick="self_reg('peng', 'peng');">A button element</button>
     </body>
-    <script>
-            function self_reg() {
-                var connection = new Strophe.Connection('/http-bind');
-                var wait = null;
-                var hold = null;
-                var callback = function(status) {
-                    if (status === Strophe.Status.REGISTER) {
-                        connection.register.fields.username = "try";
-                        connection.register.fields.password = "try";
-                        connection.register.submit();
-                    } else if (status === Strophe.Status.REGISTERED) {
-                        console.log("registered!");
-                        connection.authenticate();
-                    } else if (status === Strophe.Status.CONNECTED) {
-                        console.log("logged in!");
-                    } else {
-                        console.log("status: " + status);
-                    }
-                };
-                connection.register.connect("try@philip-pc", callback, wait, hold);
-            }
-    </script>
 </html>

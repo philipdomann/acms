@@ -34,12 +34,12 @@ Strophe.addConnectionPlugin('register', {
          *              from XEP 77.
          */
         Strophe.addNamespace('REGISTER', 'jabber:iq:register');
-        Strophe.Status.REGISTERING = i + 1;
-        Strophe.Status.REGIFAIL = i + 2;
-        Strophe.Status.REGISTER = i + 3;
-        Strophe.Status.SUBMITTING = i + 4;
-        Strophe.Status.SBMTFAIL = i + 5;
-        Strophe.Status.REGISTERED = i + 6;
+        Strophe.Status.REGISTERING = i + 1; //9
+        Strophe.Status.REGIFAIL = i + 2;//10
+        Strophe.Status.REGISTER = i + 3;//11
+        Strophe.Status.SUBMITTING = i + 4;//12
+        Strophe.Status.SBMTFAIL = i + 5;//13
+        Strophe.Status.REGISTERED = i + 6;//14
 
         if (conn.disco)
             conn.disco.addFeature(Strophe.NS.REGISTER);
